@@ -12,8 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
   });
 });
-
-
+ const gdato = [];
+ function datoGuardar(nombre,apellido,correo, listaTelefonos){
+    gdato.push({nombre,apellido,correo, listaTelefonos});
+    console.log(gdato);
+  };
+  
 function esEmailValido(email) {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return regex.test(email);
@@ -22,6 +26,10 @@ function esEmailValido(email) {
 function soloLetras(valor) {
   return /^[A-Za-zÁÉÍÓÚáéíóúÜüÑñ\s]+$/.test(valor);
 }
+
+/*function soloNumeros(telefonos){
+  const 
+}*/
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('contact-form');
@@ -35,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const apellido = document.getElementById('apellido').value.trim();
     const correo = document.getElementById('correo').value.trim();
     const telefonos = phonesContainer.querySelectorAll('input[type="tel"]');
+    const listaTelefonos = Array.from(telefonos).map(tel => tel.value.trim());
 
     if (!soloLetras(nombre)) errores.push('⚠️ El nombre debe contener solo letras.');
     if (!soloLetras(apellido)) errores.push('⚠️ El apellido debe contener solo letras.');
@@ -51,7 +60,13 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('✅ Formulario válido. Enviando datos…');
       e.preventDefault(); // Puedes quitar esto si conectas backend
     }
+    datoGuardar(nombre, apellido, correo, listaTelefonos)
   });
+
+ 
+
+
+  
 
   // Mostrar mensajes
   function mostrarErrores(listaErrores) {
