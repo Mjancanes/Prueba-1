@@ -15,7 +15,7 @@
 /*style de texto dentro del cuadro azul */
 .titulo-a{
     margin-left: 10px;
-    color: white; 
+    color: white;       
 
 }
 /*linea pequeña blanca en el cuadro azul */
@@ -38,6 +38,7 @@
 }
 /* contenedor parte donde no esta de azul*/
 .contenedor-b{
+    color: var(--text-main);
     display: flex;
     justify-content: space-between;
 }
@@ -49,8 +50,9 @@
 }
 /*style de la letra y configuraciones del texto */
 .titulo-b{
-    color:black;
-    margin-left: 30px;
+    /*color:black;*/
+    color: var(--text-main);
+    margin-left: 30px;  
     text-align:justify; 
 
 }
@@ -105,7 +107,6 @@ body.dark .cuadrado-azul {
     margin: center;
     margin-left: 50%;
 }
-/* style.css */
 /* 1) Variables para light/dark mode */
 :root {
     --bg-page:     #ffffff;
@@ -128,6 +129,7 @@ body.dark {
     --bg-page:     #1e1e1e;
     --text-main:   #e0e0e0;
     --accent-color:#16223b;
+    --text-main:   #e0e0e0;
 }
 
 /* 2) Tu estilo para el botón */
@@ -192,5 +194,172 @@ body.dark {
 }
 .button-85:after {
   z-index: -1;  /* capa gris oscura */
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 40px 20px;
+  max-width: 700px;
+  margin: 0 auto 60px;
+  background: var(--bg-page);
+  color: var(--text-main);
+}
+
+.contact-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Agrupa cada label + input + botones */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.form-group input {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Agrupa los inputs de teléfono */
+.phone-group {
+  display: flex;
+  align-items: center;
+}
+
+.phone-group input {
+  flex: 1;
+}
+
+.phone-group .remove-phone {
+  margin-left: 8px;
+  padding: 0 10px;
+  font-size: 1.25rem;
+  line-height: 1;
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.phone-group .remove-phone:disabled {
+  background: #ccc;
+  cursor: default;
+}
+
+.phone-actions {
+  text-align: right;
+  margin-bottom: 16px;
+}
+
+#add-phone {
+  background: #27ae60;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#add-phone:hover {
+  background: #1e8449;
+}
+
+/* Ajuste modo oscuro */
+body.dark .contact-section {
+  background: var(--bg-page);
+  color: var(--text-main);
+}
+
+body.dark .form-group input {
+  background: #2e2e2e;
+  border-color: #555;
+  color: #ddd;
+}
+
+body.dark #add-phone {
+  background: #145a32;
+}
+
+
+/* Agrupación de teléfono + botón agregar */
+.phone-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+
+}
+.label-telefono {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  align-items: left;
+}
+
+/* Input del teléfono */
+.phone-group input[type="tel"] {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Botones agregar y quitar */
+.add-phone,
+.remove-phone {
+  padding: 6px 12px;
+  font-size: 1.2rem;
+  background-color: #2c3b78;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.add-phone:hover {
+  background-color: #1e2a57;
+}
+
+.remove-phone:disabled {
+  background-color: #ccc;
+  cursor: default;
+}
+
+/* Botón enviar centrado */
+.contact-section form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-section button[type="submit"] {
+  margin-top: 20px;
+}
+
+
+.contact-container {
+  background-color: rgba(44, 59, 120, 0.3); 
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+  backdrop-filter: blur(4px); 
+}
+
+body.dark .contact-container {
+  background-color: rgba(54, 71, 109, 0.3); /* tono más oscuro con transparencia */
 }
 

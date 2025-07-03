@@ -116,7 +116,50 @@
                 <img src="/img/logo-usm.png" alt="logo usm" class="usm">
             </div>
         </div>
+   
     </div>
+<section class="contact-section">
+    <div class="contact-container">
+    <h2>Contáctame</h2>
+    <form id="contact-form" novalidate>   
+    <div id="errores"></div>
+
+    <!-- Nombre -->
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" required />
+    </div>
+
+    <!-- Apellido -->
+    <div class="form-group">
+      <label for="apellido">Apellido</label>
+      <input type="text" id="apellido" name="apellido" required />
+    </div>
+
+    <!-- Correo -->
+    <div class="form-group">
+      <label class="text-correo" for="correo">Correo electrónico</label>
+      <input type="email" id="correo" name="correo" required />
+    </div>
+
+    <!-- Teléfonos -->
+    <div id="phones">
+      <div class="form-group phone-group">
+        <label class="label-telefono" for="telefonoo">Teléfono</label>
+        <input type="tel" name="telefono[]" required />
+        <button type="button" class="remove-phone" disabled>−</button>
+      </div>
+    </div>
+    <div class="phone-actions">
+      <button type="button" id="add-phone">＋ Agregar teléfonos</button>
+    </div>
+
+    <button type="submit" class="button-85">Enviar</button>
+  </form>
+  </div>
+</section>
+
+
 
     <script src="script.js" defer></script>
 </body>
