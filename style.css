@@ -101,13 +101,13 @@ body.dark .cuadrado-azul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;    /* ajusta a tu gusto */
+    padding: 10px 20px; 
 }
 .top-bar h1 {
     margin: center;
     margin-left: 50%;
 }
-/* 1) Variables para light/dark mode */
+/* light/dark mode */
 :root {
     --bg-page:     #ffffff;
     --text-main:   #000000;
@@ -122,7 +122,7 @@ body {
 /* Ejemplo de uso en tu CV */
 .cuadrado-azul {
     background-color: var(--accent-color);
-  /* color: blanco fijo o var(--text-page) si lo prefieres */
+
 }
 /* Modos */
 body.dark {
@@ -132,7 +132,6 @@ body.dark {
     --text-main:   #e0e0e0;
 }
 
-/* 2) Tu estilo para el botón */
 .button-85 {
     padding: 0.6em 2em;
     border: none;
@@ -147,9 +146,10 @@ body.dark {
     touch-action: manipulation;
     transition: color 0.3s;
 }
+  /* boton-rgb */
 .button-85:before {
     content: "cambiar el modo";
-    z-index: -2;  /* fondo degradado */
+    z-index: -2;
     background: linear-gradient(
         45deg,
         #ff0000,
@@ -190,13 +190,13 @@ body.dark {
     border-radius: 10px;
 }
 .button-85:before {
-  z-index: -2;  /* fondo degradado */
+  z-index: -2; 
 }
 .button-85:after {
-  z-index: -1;  /* capa gris oscura */
+  z-index: -1;  
 }
 
-/* Contact Section */
+/* sec de contacto*/
 .contact-section {
   padding: 40px 20px;
   max-width: 700px;
@@ -317,7 +317,7 @@ body.dark #add-phone {
   border-radius: 4px;
 }
 
-/* Botones agregar y quitar */
+/* Botones agregar y eliminar */
 .add-phone,
 .remove-phone {
   padding: 6px 12px;
@@ -360,6 +360,6 @@ body.dark #add-phone {
 }
 
 body.dark .contact-container {
-  background-color: rgba(54, 71, 109, 0.3); /* tono más oscuro con transparencia */
+  background-color: rgba(54, 71, 109, 0.3);
 }
 

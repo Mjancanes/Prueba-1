@@ -1,42 +1,44 @@
+  /*Java de cambio de modo claro/oscuro */
 document.addEventListener('DOMContentLoaded', () => {
   const btn = document.getElementById('theme-toggle');
-  // 1) Arranca con la preferencia guardada
+
   if (localStorage.getItem('theme') === 'dark') {
     document.body.classList.add('dark');
     btn.textContent = '☀️Cambiar el modo';
   }
-  // 2) Al click, alterna clase + emoji + persistencia
+
   btn.addEventListener('click', () => {
     const isDark = document.body.classList.toggle('dark');
     btn.textContent = isDark ? '☀️Modo Claro' : '🌙Modo Oscuro';
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
   });
 });
+  /*gdato almacena datos  */
  const gdato = [];
+
+ /*Recibe la info del formulario */
  function datoGuardar(nombre,apellido,correo, listaTelefonos){
     gdato.push({nombre,apellido,correo, listaTelefonos});
     console.log(gdato);
   };
   
+  /* validacion de correo*/
 function esEmailValido(email) {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return regex.test(email);
 }
 
+  /* validacion de solo letras*/
 function soloLetras(valor) {
   return /^[A-Za-zÁÉÍÓÚáéíóúÜüÑñ\s]+$/.test(valor);
 }
-
-/*function soloNumeros(telefonos){
-  const 
-}*/
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('contact-form');
   const phonesContainer = document.getElementById('phones');
   const addPhoneBtn = document.getElementById('add-phone');
 
-  // Validación al enviar
+  /*Validación al enviar y envio de formulario*/
   form.addEventListener('submit', e => {
     const errores = [];
     const nombre = document.getElementById('nombre').value.trim();
@@ -52,23 +54,18 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!tel.value.trim()) errores.push(`⚠️ El teléfono #${i + 1} está vacío.`);
     });
 
-    // Mostrar errores si hay
+    /* Muestra errores si hay*/
     if (errores.length > 0) {
       e.preventDefault();
       mostrarErrores(errores);
     } else {
       alert('✅ Formulario válido. Enviando datos…');
-      e.preventDefault(); // Puedes quitar esto si conectas backend
+      e.preventDefault();
     }
     datoGuardar(nombre, apellido, correo, listaTelefonos)
   });
 
- 
-
-
-  
-
-  // Mostrar mensajes
+  /* Mostrar mensajes*/
   function mostrarErrores(listaErrores) {
     const contenedor = document.getElementById('errores');
     contenedor.innerHTML = listaErrores.join('<br>');
@@ -76,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     contenedor.style.marginBottom = '10px';
   }
 
-  // Teléfonos dinámicos
+  /*Teléfonos dinámicos*/
   function updateRemoveButtons() {
     const removeBtns = phonesContainer.querySelectorAll('.remove-phone');
     removeBtns.forEach(btn => {
